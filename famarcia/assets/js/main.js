@@ -440,3 +440,22 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', () => toggleSenhaVisibilidade(button));
     });
 });
+// Função para abrir/fechar o modal de login
+function toggleLogin() {
+  const modal = document.getElementById("login-modal");
+
+  // Se o modal estiver visível, esconde. Se não, mostra.
+  if (modal.style.display === "flex") {
+    modal.style.display = "none";
+  } else {
+    modal.style.display = "flex";
+  }
+}
+
+// Fechar ao clicar fora do conteúdo
+window.onclick = function(event) {
+  const modal = document.getElementById("login-modal");
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+}

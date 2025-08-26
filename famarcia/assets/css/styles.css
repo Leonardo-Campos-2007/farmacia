@@ -515,3 +515,100 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+/* Modal background */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1000; 
+  top: 0; left: 0; 
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+}
+
+/* Caixa do modal */
+.modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 380px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  position: relative;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Botão de fechar */
+.modal-close {
+  position: absolute;
+  top: 12px; right: 16px;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: #888;
+}
+
+/* Título */
+.modal-content h2 {
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: #222;
+}
+
+/* Inputs */
+.form-group input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  transition: 0.2s;
+}
+
+.form-group input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 6px rgba(0,123,255,0.2);
+}
+
+/* Botão */
+.btn {
+  width: 100%;
+  padding: 12px;
+  background: #007bff;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background: #0056b3;
+}
+
+/* Links e textos */
+.form-text {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.form-text a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.form-text a:hover {
+  text-decoration: underline;
+}
