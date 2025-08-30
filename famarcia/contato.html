@@ -98,33 +98,74 @@
             </p>
         </div>
     </footer>
-    
-<!-- Modal de Login -->
-<div id="login-modal" class="modal">
-  <div class="modal-content">
-    <button class="modal-close" onclick="toggleLogin()">&times;</button>
-    <h2>Entrar</h2>
-    <form onsubmit="fazerLogin(event)">
-      <div class="form-group">
-        <input type="email" id="login-email" placeholder="E-mail" required>
-      </div>
-      <div class="form-group">
-        <input type="password" id="login-senha" placeholder="Senha" required>
-      </div>
-      <button type="submit" class="btn">Entrar</button>
-      <p class="form-text">
-        <a href="#">Esqueceu sua senha?</a>
-      </p>
-      <p class="form-text">
-        Não tem uma conta? <a href="registro.html">Cadastre-se</a>
-      </p>
-    </form>
-  </div>
+
+    <!-- Modal de Login -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="toggleLogin()">&times;</button>
+            <h2>Entrar</h2>
+            <form onsubmit="fazerLogin(event)">
+                <div class="form-group">
+                    <label for="login-email">E-mail:</label>
+                    <input type="email" id="login-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-senha">Senha:</label>
+                    <input type="password" id="login-senha" required>
+                </div>
+                <button type="submit" class="btn" style="width: 100%; margin-top: 1rem;">Entrar</button>
+                <p style="text-align: center; margin-top: 1rem;">
+                    <a href="#" onclick="toggleRecuperarSenha()" style="color: var(--primary-color);">Esqueceu sua senha?</a>
+                </p>
+                <p style="text-align: center; margin-top: 0.5rem;">
+                    Não tem uma conta? <a href="registro.html" style="color: var(--primary-color);">Cadastre-se</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Recuperar Senha -->
+    <!-- Modal Recuperar Senha -->
+<div id="recuperar-modal" class="modal" onclick="fecharRecuperarModal(event)">
+    <div class="modal-content">
+        <button class="modal-close" onclick="toggleRecuperarSenha()">&times;</button>
+        <h2>Recuperar Senha</h2>
+        <form onsubmit="recuperarSenha(event)">
+            <div class="form-group">
+                <label for="recuperar-email">Digite seu e-mail:</label>
+                <input type="email" id="recuperar-email" required>
+            </div>
+            <button type="submit" class="btn" style="width: 100%; margin-top: 1rem;">Enviar link de recuperação</button>
+        </form>
+    </div>
 </div>
 
 
     <!-- Mensagens -->
     <div id="mensagem" class="mensagem"></div>
+
+    <script>
+        function toggleLogin() {
+            document.getElementById("login-modal").classList.toggle("active");
+        }
+
+        function toggleRecuperarSenha() {
+            document.getElementById("recuperar-modal").classList.toggle("active");
+        }
+
+        function recuperarSenha(event) {
+            event.preventDefault();
+            const email = document.getElementById("recuperar-email").value;
+            if(email) {
+                document.getElementById("mensagem").innerText = "Um link de recuperação foi enviado para " + email;
+                document.getElementById("mensagem").classList.add("show");
+                toggleRecuperarSenha();
+                setTimeout(() => {
+                    document.getElementById("mensagem").classList.remove("show");
+                }, 4000);
+            }
+        }
+    </script>
 
     <script src="assets/js/main.js"></script>
 </body>

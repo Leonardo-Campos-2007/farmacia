@@ -612,3 +612,182 @@ footer {
 .form-text a:hover {
   text-decoration: underline;
 }
+
+.contato-form {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.contato-form h3 {
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #444;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #2b7cff;
+  box-shadow: 0 0 6px rgba(43,124,255,0.3);
+}
+
+.contato-form button {
+  margin-top: 1rem; /* 🔹 afasta o botão da caixa de mensagem */
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  background: #2b7cff;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contato-form button:hover {
+  background: #1a5fd1;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #2b7cff;
+  padding: 1rem 2rem;
+}
+
+header nav .logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  color: #fff;
+  font-weight: bold;
+}
+
+header nav .logo i {
+  margin-right: 0.5rem;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  align-items: center; /* 🔹 garante alinhamento vertical */
+  gap: 1.5rem;
+}
+
+.menu li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.menu li a:hover {
+  color: #ffea00;
+}
+
+.menu li .btn {
+  padding: 0.6rem 1.2rem;
+  background: #fff;
+  color: #2b7cff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.menu li .btn:hover {
+  background: #ffea00;
+  color: #000;
+}
+
+/* Esconde todos os modais por padrão */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Conteúdo centralizado do modal */
+.modal-content {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+/* Botão de fechar */
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Quando ativo, o modal aparece */
+.modal.active {
+    display: flex;
+}
+
+.barra-pesquisa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem auto;
+    max-width: 600px;
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 25px;
+    background: #fff;
+}
+
+.barra-pesquisa input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    padding: 0.5rem;
+}
+
+.barra-pesquisa i {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+

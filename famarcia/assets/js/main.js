@@ -459,3 +459,34 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+// Fecha modal ao clicar fora do conteúdo
+function fecharRecuperarModal(event) {
+    // Se clicou no próprio modal (fundo) e não no conteúdo interno
+    if(event.target === event.currentTarget) {
+        toggleRecuperarSenha();
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const inputPesquisa = document.getElementById("pesquisa");
+    const produtos = document.querySelectorAll(".produto");
+
+    inputPesquisa.addEventListener("input", () => {
+        const termo = inputPesquisa.value.toLowerCase();
+
+        produtos.forEach(produto => {
+            const nome = produto.getAttribute("data-nome")?.toLowerCase() || "";
+            const categoria = produto.getAttribute("data-categoria")?.toLowerCase() || "";
+            const sintomas = produto.getAttribute("data-sintomas")?.toLowerCase() || "";
+
+            if (nome.includes(termo) || categoria.includes(termo) || sintomas.includes(termo)) {
+                produto.style.display = "block";
+            } else {
+                produto.style.display = "none";
+            }
+        });
+    });
+});
+
+
