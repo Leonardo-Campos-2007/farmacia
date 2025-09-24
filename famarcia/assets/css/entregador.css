@@ -1,0 +1,76 @@
+/* FILE: styles.css */
+:root{
+--bg:#f4f6f9;
+--card:#ffffff;
+--muted:#6c757d;
+--accent:#007bff;
+--success:#00ff3c;
+--danger:#dc3545;
+}
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+background: var(--bg);
+color:#212529;
+}
+.topbar{
+display:flex;align-items:center;justify-content:space-between;padding:12px 18px;background:var(--accent);color:#fff;
+}
+.brand{display:flex;gap:10px;align-items:center}
+.logo{width:44px;height:44px;fill:#fff}
+.brand strong{display:block}
+.brand small{display:block;color:#e0e0e0;font-size:12px}
+.top-actions{display:flex;gap:10px;align-items:center}
+.status-pill{background:rgba(40,167,69,0.15);color:var(--success);padding:6px 10px;border-radius:999px;font-weight:600}
+.btn{background:var(--card);border:1px solid #dee2e6;padding:8px 12px;border-radius:10px;color:inherit;cursor:pointer}
+.btn.ghost{background:transparent;color:#fff;border:1px solid #fff}
+.btn.primary{background:var(--danger);color:#fff;border:none}
+.layout{display:grid;grid-template-columns:320px 1fr 260px;gap:18px;padding:18px}
+.sidebar{background:var(--card);padding:16px;border-radius:14px;min-height:70vh;box-shadow:0 2px 6px rgba(0,0,0,0.1)}
+.search input{width:100%;padding:10px;border-radius:10px;border:1px solid #dee2e6;background:#fff;color:#212529}
+.sidebar h3{margin-top:14px;color:#212529}
+.orders{list-style:none;padding:0;margin:10px 0;display:flex;flex-direction:column;gap:10px}
+.order-card{padding:10px;border-radius:10px;background:#f8f9fa;cursor:pointer;border:1px solid #dee2e6}
+.order-card.selected{outline:2px solid var(--accent)}
+.order-head{display:flex;justify-content:space-between;align-items:center}
+.order-title{font-weight:700}
+.muted{color:var(--muted);font-size:13px}
+.badge{padding:6px 8px;border-radius:999px;font-weight:700;font-size:12px}
+.badge.pending{background:#fff3cd;color:#856404}
+.badge.available{background:#cce5ff;color:#004085}
+.badge.onroute{background:#d4edda;color:#155724}
+.badge.done{background:#e2e3e5;color:#383d41}
+.order-meta{font-size:13px;color:var(--muted);margin-top:6px}
+.quick-filters{display:flex;gap:8px;margin-top:16px}
+.chip{background:#f8f9fa;border:1px solid #dee2e6;padding:6px 8px;border-radius:8px;color:#212529}
+.help{margin-top:18px;font-size:13px;color:var(--muted)}
+.main{display:flex;flex-direction:column;gap:18px}
+.map-card{background:var(--card);padding:14px;border-radius:14px;box-shadow:0 2px 6px rgba(0,0,0,0.1)}
+.map-placeholder{height:320px;border-radius:10px;background:#e9ecef;display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:700}
+.detail-panel{background:var(--card);padding:14px;border-radius:12px;display:flex;flex-direction:column;gap:12px;box-shadow:0 2px 6px rgba(0,0,0,0.1)}
+.detail-header{display:flex;justify-content:space-between;align-items:center}
+.actions{display:flex;gap:8px}
+.order-details{min-height:160px;color:#212529}
+.control-bar{display:flex;gap:10px;margin-top:6px}
+.btn.wide{flex:1;padding:12px;border-radius:10px}
+.btn.success{background:var(--success);border:none;color:#fff}
+.rightbar{background:var(--card);padding:14px;border-radius:12px;box-shadow:0 2px 6px rgba(0,0,0,0.1)}
+.profile-card{display:flex;gap:12px;align-items:center;margin-bottom:12px}
+.avatar{width:56px;height:56px;border-radius:12px;background:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff}
+.name{font-weight:700}
+.stats{display:flex;gap:12px;margin-bottom:12px}
+.stat{background:#f8f9fa;padding:10px;border-radius:10px;flex:1;border:1px solid #dee2e6}
+.stat-value{font-weight:800}
+.shift{margin-top:10px}
+.support{margin-top:12px}
+.mobile-bar{display:none}
+@media (max-width:980px){
+.layout{grid-template-columns:1fr;grid-template-rows:auto 1fr auto}
+.sidebar{order:2}
+.rightbar{display:none}
+.mobile-bar{display:flex;position:fixed;bottom:12px;left:50%;transform:translateX(-50%);background:var(--accent);padding:6px;border-radius:12px;gap:8px}
+.mb-btn{background:transparent;border:none;color:#fff;padding:8px}
+}
+.done-card{opacity:0.6}
+hr{border:none;border-top:1px solid #dee2e6;margin:10px 0}
