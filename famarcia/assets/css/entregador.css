@@ -1,76 +1,266 @@
-/* FILE: styles.css */
-:root{
---bg:#f4f6f9;
---card:#ffffff;
---muted:#6c757d;
---accent:#007bff;
---success:#00ff3c;
---danger:#dc3545;
+/* ===== Reset & Base ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Roboto, sans-serif;
 }
-*{box-sizing:border-box}
-body{
-margin:0;
-font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-background: var(--bg);
-color:#212529;
+
+body {
+  background: #f4f6f9;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
-.topbar{
-display:flex;align-items:center;justify-content:space-between;padding:12px 18px;background:var(--accent);color:#fff;
+
+/* ===== Topbar ===== */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #007bff;
+  color: white;
+  padding: 14px 24px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
-.brand{display:flex;gap:10px;align-items:center}
-.logo{width:44px;height:44px;fill:#fff}
-.brand strong{display:block}
-.brand small{display:block;color:#e0e0e0;font-size:12px}
-.top-actions{display:flex;gap:10px;align-items:center}
-.status-pill{background:rgba(40,167,69,0.15);color:var(--success);padding:6px 10px;border-radius:999px;font-weight:600}
-.btn{background:var(--card);border:1px solid #dee2e6;padding:8px 12px;border-radius:10px;color:inherit;cursor:pointer}
-.btn.ghost{background:transparent;color:#fff;border:1px solid #fff}
-.btn.primary{background:var(--danger);color:#fff;border:none}
-.layout{display:grid;grid-template-columns:320px 1fr 260px;gap:18px;padding:18px}
-.sidebar{background:var(--card);padding:16px;border-radius:14px;min-height:70vh;box-shadow:0 2px 6px rgba(0,0,0,0.1)}
-.search input{width:100%;padding:10px;border-radius:10px;border:1px solid #dee2e6;background:#fff;color:#212529}
-.sidebar h3{margin-top:14px;color:#212529}
-.orders{list-style:none;padding:0;margin:10px 0;display:flex;flex-direction:column;gap:10px}
-.order-card{padding:10px;border-radius:10px;background:#f8f9fa;cursor:pointer;border:1px solid #dee2e6}
-.order-card.selected{outline:2px solid var(--accent)}
-.order-head{display:flex;justify-content:space-between;align-items:center}
-.order-title{font-weight:700}
-.muted{color:var(--muted);font-size:13px}
-.badge{padding:6px 8px;border-radius:999px;font-weight:700;font-size:12px}
-.badge.pending{background:#fff3cd;color:#856404}
-.badge.available{background:#cce5ff;color:#004085}
-.badge.onroute{background:#d4edda;color:#155724}
-.badge.done{background:#e2e3e5;color:#383d41}
-.order-meta{font-size:13px;color:var(--muted);margin-top:6px}
-.quick-filters{display:flex;gap:8px;margin-top:16px}
-.chip{background:#f8f9fa;border:1px solid #dee2e6;padding:6px 8px;border-radius:8px;color:#212529}
-.help{margin-top:18px;font-size:13px;color:var(--muted)}
-.main{display:flex;flex-direction:column;gap:18px}
-.map-card{background:var(--card);padding:14px;border-radius:14px;box-shadow:0 2px 6px rgba(0,0,0,0.1)}
-.map-placeholder{height:320px;border-radius:10px;background:#e9ecef;display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:700}
-.detail-panel{background:var(--card);padding:14px;border-radius:12px;display:flex;flex-direction:column;gap:12px;box-shadow:0 2px 6px rgba(0,0,0,0.1)}
-.detail-header{display:flex;justify-content:space-between;align-items:center}
-.actions{display:flex;gap:8px}
-.order-details{min-height:160px;color:#212529}
-.control-bar{display:flex;gap:10px;margin-top:6px}
-.btn.wide{flex:1;padding:12px;border-radius:10px}
-.btn.success{background:var(--success);border:none;color:#fff}
-.rightbar{background:var(--card);padding:14px;border-radius:12px;box-shadow:0 2px 6px rgba(0,0,0,0.1)}
-.profile-card{display:flex;gap:12px;align-items:center;margin-bottom:12px}
-.avatar{width:56px;height:56px;border-radius:12px;background:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff}
-.name{font-weight:700}
-.stats{display:flex;gap:12px;margin-bottom:12px}
-.stat{background:#f8f9fa;padding:10px;border-radius:10px;flex:1;border:1px solid #dee2e6}
-.stat-value{font-weight:800}
-.shift{margin-top:10px}
-.support{margin-top:12px}
-.mobile-bar{display:none}
-@media (max-width:980px){
-.layout{grid-template-columns:1fr;grid-template-rows:auto 1fr auto}
-.sidebar{order:2}
-.rightbar{display:none}
-.mobile-bar{display:flex;position:fixed;bottom:12px;left:50%;transform:translateX(-50%);background:var(--accent);padding:6px;border-radius:12px;gap:8px}
-.mb-btn{background:transparent;border:none;color:#fff;padding:8px}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
-.done-card{opacity:0.6}
-hr{border:none;border-top:1px solid #dee2e6;margin:10px 0}
+
+.logo {
+  width: 32px;
+  height: 32px;
+  fill: white;
+}
+
+.brand strong {
+  font-size: 18px;
+}
+
+.brand small {
+  display: block;
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.top-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.status-pill {
+  background: #28a745;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.btn {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.btn.ghost {
+  background: white;
+  color: #007bff;
+  border: 1px solid #007bff;
+}
+
+.btn.ghost:hover {
+  background: #e9f3ff;
+}
+
+.btn.primary {
+  background: #dc3545;
+  color: white;
+}
+
+.btn.primary:hover {
+  background: #c82333;
+}
+
+/* ===== Layout ===== */
+.layout {
+  display: flex;
+  padding: 20px;
+}
+
+.sidebar {
+  width: 380px;
+  background: white;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+/* ===== Busca ===== */
+.search input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 18px;
+  font-size: 14px;
+  transition: border 0.2s;
+}
+
+.search input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* ===== Pedidos ===== */
+.orders {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.order-card {
+  background: #f9fafc;
+  border: 1px solid #eee;
+  padding: 14px;
+  border-radius: 12px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.order-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.order-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-title {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.muted {
+  font-size: 13px;
+  color: #666;
+}
+
+.order-meta {
+  font-size: 14px;
+  margin-top: 6px;
+  color: #444;
+}
+
+/* ===== Badges ===== */
+.badge {
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.badge.pending {
+  background: #ffeeba;
+  color: #856404;
+}
+
+.badge.available {
+  background: #cce5ff;
+  color: #004085;
+}
+
+.badge.onroute {
+  background: #d4edda;
+  color: #155724;
+}
+
+/* ===== Filtros ===== */
+.quick-filters {
+  margin-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chip {
+  padding: 7px 12px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  background: #f8f9fa;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.chip:hover {
+  background: #e2e6ea;
+}
+
+.chip.active {
+  background: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+/* ===== Dicas ===== */
+.help {
+  margin-top: 20px;
+  font-size: 13px;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* ===== Layout ===== */
+.layout {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Sidebar mais larga */
+.sidebar {
+  width: 600px;         /* antes era 380px */
+  max-width: 90%;       /* responsivo */
+  background: white;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+/* Pedidos com mais respiro */
+.orders {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;            /* mais espaçamento entre cards */
+}
+
+.order-card {
+  background: #f9fafc;
+  border: 1px solid #eee;
+  padding: 18px;        /* aumentei padding */
+  border-radius: 12px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.order-title {
+  font-size: 16px;      /* fonte maior */
+}
+
+.order-meta {
+  font-size: 15px;      /* mais legível */
+}

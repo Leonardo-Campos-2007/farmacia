@@ -1,86 +1,92 @@
-<!-- FILE: index.html -->
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Painel do Motoboy — farmaciadigital</title>
-<link rel="stylesheet" href="assets/css/entregador.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Painel do Motoboy — farmaciadigital</title>
+  <link rel="stylesheet" href="assets/css/entregador.css">
 </head>
 <body>
-<header class="topbar">
-<div class="brand">
-<svg class="logo" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h18v4H3zM3 9h18v12H3z"/></svg>
-<div>
-<strong>Farmaciadigital</strong>
-<small>Motoboy</small>
-</div>
-</div>
-<div class="top-actions">
-<div class="status-pill">Disponível</div>
-<button class="btn ghost">Iniciar Turno</button>
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="brand">
+      <svg class="logo" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3 3h18v4H3zM3 9h18v12H3z"/>
+      </svg>
+      <div>
+        <strong>Farmaciadigital</strong>
+        <small>Motoboy</small>
+      </div>
+    </div>
+    <div class="top-actions">
+      <div class="status-pill">Disponível</div>
+      <button class="btn ghost">Iniciar Turno</button>
+      <a href="index.html" class="btn primary">Sair</a>
+    </div>
+  </header>
+
+  <!-- Layout -->
+  <main class="layout">
+    <aside class="sidebar">
+      <!-- Busca -->
+      <div class="search">
+        <input type="text" placeholder="Buscar pedido, endereço ou cliente" />
+      </div>
+
+      <!-- Lista de pedidos -->
+      <h3>Entregas próximas</h3>
+      <ul class="orders" id="ordersList">
+        <li class="order-card" data-id="101" data-distance="0.8">
+          <div class="order-head">
+            <div>
+              <div class="order-title">Pedido #101</div>
+              <div class="muted">João S. — 0.8 km</div>
+            </div>
+            <div class="badge pending">Aguardando</div>
+          </div>
+          <div class="order-meta">R$ 12,90 • Entrega rápida</div>
+        </li>
+
+        <li class="order-card" data-id="102" data-distance="4.7">
+          <div class="order-head">
+            <div>
+              <div class="order-title">Pedido #102</div>
+              <div class="muted">Maria F. — 4.7 km</div>
+            </div>
+            <div class="badge available">Atribuído</div>
+          </div>
+          <div class="order-meta">R$ 8,50 • Sem restrições</div>
+        </li>
+
+        <li class="order-card" data-id="103" data-distance="1.2">
+          <div class="order-head">
+            <div>
+              <div class="order-title">Pedido #103</div>
+              <div class="muted">Carlos P. — 1.2 km</div>
+            </div>
+            <div class="badge onroute">Em rota</div>
+          </div>
+          <div class="order-meta">R$ 5,00 • Retirar na farmácia A</div>
+        </li>
+      </ul>
+
+      <!-- Filtros -->
+      <div class="quick-filters">
+        <button class="chip active">Próximos</button>
+        <button class="chip">Atribuídos</button>
+        <button class="chip">Em Rota</button>
+        <button class="chip">Concluídos</button>
+      </div>
+
+      
 
 
-<a href="index.html"><button class="btn primary">Sair</button></a>
-
-</div>
-</header>
-
-
-<main class="layout">
-<aside class="sidebar">
-<div class="search">
-<input placeholder="Buscar pedido, endereço ou cliente" />
-</div>
-
-
-<h3>Entregas próximas</h3>
-<ul class="orders" id="ordersList">
-<li class="order-card" data-id="101" data-distance="2.3">
-<div class="order-head">
-<div>
-<div class="order-title">Pedido #101</div>
-<div class="muted">João S. — 0.8 km</div>
-</div>
-<div class="badge pending">Aguardando</div>
-</div>
-<div class="order-meta">R$ 12,90 • Entrega rápida</div>
-</li>
-
-
-<li class="order-card" data-id="102" data-distance="4.7">
-<div class="order-head">
-<div>
-<div class="order-title">Pedido #102</div>
-<div class="muted">Maria F. — 4.7 km</div>
-</div>
-<div class="badge available">Atribuído</div>
-</div>
-<div class="order-meta">R$ 8,50 • Sem restrições</div>
-</li>
-
-
-<li class="order-card" data-id="103" data-distance="1.2">
-<div class="order-head">
-<div>
-<div class="order-title">Pedido #103</div>
-<div class="muted">Carlos P. — 1.2 km</div>
-</div>
-<div class="badge onroute">Em rota</div>
-</div>
-<div class="order-meta">R$ 5,00 • Retirar na farmácia A</div>
-</li>
-</ul>
-
-
-<div class="quick-filters">
-<button class="chip">Próximos</button>
-<button class="chip">Atribuídos</button>
-<button class="chip">Em Rota</button>
-<button class="chip">Concluídos</button>
-</div>
-
-
-<div class="help">
-<strong>Dicas</strong>
-<p>Mantenha o app aberto; aceite pedidos próximos para ganhar mais bônus.</p>
+      <!-- Dicas -->
+      <div class="help">
+        <strong>Dicas</strong>
+        <p>Mantenha o app aberto; aceite pedidos próximos para ganhar mais bônus.</p>
+      </div>
+    </aside>
+  </main>
+</body>
+</html>
