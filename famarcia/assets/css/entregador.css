@@ -74,7 +74,7 @@ body {
 .btn.ghost {
   background: white;
   color: #007bff;
-  border: 1px solid #007bff;
+  border: 1px solid #ffffff;
 }
 
 .btn.ghost:hover {
@@ -173,13 +173,13 @@ body {
 }
 
 .badge.pending {
-  background: #ffeeba;
-  color: #856404;
+  background: #007bff;
+  color: #ffffff;
 }
 
 .badge.available {
-  background: #cce5ff;
-  color: #004085;
+  background: #007bff;
+  color: #ffffff;
 }
 
 .badge.onroute {
