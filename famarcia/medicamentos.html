@@ -34,22 +34,213 @@
         </nav>
     </header>
 
-    <main>
-        <div class="search-container">
-            <div class="search-box">
-                <input type="text" id="pesquisa" placeholder="Busque por nome do medicamento ou sintoma..." onkeyup="pesquisarMedicamentos()">
-                <button class="search-button">
-                    <i class="fas fa-search"></i>
-                </button>
+        <main>
+
+    <div class="search-container">
+                <div class="search-box">
+                    <input type="text" id="pesquisa" placeholder="Busque por nome do medicamento ou sintoma..." onkeyup="pesquisarMedicamentos()">
+                    <button class="search-button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div class="search-filters">
+                    <button class="filter-btn active" data-filter="todos">Todos</button>
+                    <button class="filter-btn" data-filter="analgesicos">Analgésicos</button>
+                    <button class="filter-btn" data-filter="antibioticos">Antibióticos</button>
+                    <button class="filter-btn" data-filter="vitaminas">Vitaminas</button>
+                    <button class="filter-btn" data-filter="controlados">Controlados</button>
+                </div>
             </div>
-            <div class="search-filters">
-                <button class="filter-btn active" data-filter="todos">Todos</button>
-                <button class="filter-btn" data-filter="analgesicos">Analgésicos</button>
-                <button class="filter-btn" data-filter="antibioticos">Antibióticos</button>
-                <button class="filter-btn" data-filter="vitaminas">Vitaminas</button>
-                <button class="filter-btn" data-filter="controlados">Controlados</button>
-            </div>
-        </div>
+        </section>
+
+        <style>
+            .search-container {
+                max-width: 800px;
+                margin: 0 auto;
+            }
+
+            .search-box {
+                display: flex;
+                gap: 0.5rem;
+                margin-bottom: 1rem;
+            }
+
+            .search-box input {
+                flex: 1;
+                padding: 1rem;
+                border: 2px solid rgba(0, 123, 255, 0.2);
+                border-radius: 8px;
+                font-size: 1rem;
+                transition: all 0.3s;
+            }
+
+            .search-box input:focus {
+                border-color: var(--primary-color);
+                outline: none;
+                box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+            }
+
+            .search-button {
+                background: var(--gradient-primary);
+                color: white;
+                border: none;
+                padding: 0 1.5rem;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: all 0.3s;
+            }
+
+            .search-button:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
+            }
+
+            .search-filters {
+                display: flex;
+                gap: 0.5rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .filter-btn {
+                background: var(--white);
+                border: 2px solid rgba(0, 123, 255, 0.2);
+                padding: 0.5rem 1rem;
+                border-radius: 20px;
+                cursor: pointer;
+                transition: all 0.3s;
+            }
+
+            .filter-btn:hover,
+            .filter-btn.active {
+                background: var(--primary-color);
+                color: var(--white);
+                border-color: var(--primary-color);
+            }
+
+            .produto-descricao {
+                background: rgba(0, 123, 255, 0.05);
+                padding: 1rem;
+                border-radius: 8px;
+                margin: 1rem 0;
+                font-size: 0.9rem;
+                color: #666;
+            }
+
+            .produto-categoria {
+                display: inline-block;
+                padding: 0.3rem 0.8rem;
+                background: rgba(0, 123, 255, 0.1);
+                color: var(--primary-color);
+                border-radius: 20px;
+                font-size: 0.8rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .produto-detalhes {
+                margin-top: 1rem;
+                padding-top: 1rem;
+                border-top: 1px solid rgba(0, 123, 255, 0.1);
+            }
+
+            .produto-detalhes strong {
+                color: var(--primary-color);
+            }
+
+            .sem-resultados {
+                width: 100%;
+                padding: 2rem;
+                text-align: center;
+                animation: fadeIn 0.5s ease;
+            }
+
+            .mensagem-busca {
+                background: var(--white);
+                padding: 2rem;
+                border-radius: 12px;
+                box-shadow: 0 4px 15px rgba(0, 123, 255, 0.1);
+                max-width: 500px;
+                margin: 0 auto;
+            }
+
+            .mensagem-busca i {
+                font-size: 3rem;
+                color: var(--primary-color);
+                margin-bottom: 1rem;
+            }
+
+            .mensagem-busca h3 {
+                color: var(--text-color);
+                margin-bottom: 1rem;
+            }
+
+            .mensagem-busca ul {
+                list-style: none;
+                padding: 0;
+                margin-top: 1rem;
+            }
+
+            .mensagem-busca li {
+                color: var(--primary-color);
+                padding: 0.3rem 0;
+            }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            @keyframes addToCart {
+                0% {
+                    transform: translateY(0);
+                }
+                20% {
+                    transform: translateY(-10px) scale(1.02);
+                }
+                40% {
+                    transform: translateY(0) scale(1);
+                }
+                60% {
+                    transform: translateY(-5px);
+                }
+                80% {
+                    transform: translateY(0);
+                }
+                100% {
+                    transform: translateY(0);
+                }
+            }
+
+            .produto.adicionando-ao-carrinho {
+                animation: addToCart 0.7s ease-in-out;
+            }
+
+            .btn-cart {
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+
+            .btn-cart:disabled {
+                opacity: 0.7;
+                cursor: not-allowed;
+            }
+
+            .btn-cart:hover:not(:disabled) {
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(0, 123, 255, 0.2);
+            }
+
+            .btn-cart:active:not(:disabled) {
+                transform: translateY(0) scale(0.95);
+            }
+        </style>
+
+        <main>
 
         <section class="produtos">
             <div class="produto" data-nome="Dipirona" data-categoria="analgesicos" data-sintomas="dor febre">
