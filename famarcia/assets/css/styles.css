@@ -893,8 +893,8 @@ nav {
 
 /* Botão */
 .contato-form .btn {
-  background: #f0f0f0;
-  color: #011b46;
+  background: linear-gradient(90deg, #0066d6, #00b894);
+  color: #ffffff;
   border: none;
   padding: 0.8rem 1.5rem;
   border-radius: 8px;
@@ -904,7 +904,7 @@ nav {
 }
 
 .contato-form .btn:hover {
-  background: #0055b3;
+  background: linear-gradient(90deg, #0066d6, #00b894);
 }
 
 /* ===== RESPONSIVIDADE ===== */
