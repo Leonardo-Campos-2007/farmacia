@@ -238,44 +238,76 @@
             .btn-cart:active:not(:disabled) {
                 transform: translateY(0) scale(0.95);
             }
+
+            
         </style>
 
         <main>
 
-        <section class="produtos">
-            <div class="produto" data-nome="Dipirona" data-categoria="analgesicos" data-sintomas="dor febre">
-                <img src="assets/images/produtos/dipirona.png" alt="Dipirona">
+ <section id="medicamentos" class="produtos">
+            <article class="produto" data-categoria="analgesicos" data-nome="Dipirona" data-sintomas="dor,febre,dor de cabeça,enxaqueca">
+                <div class="produto-imagem-container">
+                    <img src="assets/imagens/dipirona.png" alt="Dipirona">
+                </div>
                 <h3>Dipirona 500mg</h3>
-                <p class="produto-descricao">Indicado para dores e febre.</p>
-                <p class="produto-preco">R$ 5,99</p>
-                <button class="btn-adicionar" onclick="adicionarAoCarrinho('dipirona', 'Dipirona 500mg', 5.99)">
+                <span class="produto-categoria">Analgésico</span>
+                <div class="produto-descricao">
+                    Indicado para alívio da dor e febre. Eficaz no tratamento de dores de cabeça, 
+                    dores musculares, dores de dente e outras condições dolorosas.
+                </div>
+                <div class="produto-detalhes">
+                    <p><strong>Dosagem:</strong> 1 comprimido a cada 6 horas</p>
+                    <p><strong>Contraindicações:</strong> Alergia ao medicamento</p>
+                </div>
+                <p class="estoque">Em estoque: 50 unidades</p>
+                <p class="preco">R$ 5,99</p>
+                <button class="btn btn-cart" onclick="adicionarAoCarrinho('dipirona', 'Dipirona 500mg', 5.99)">
                     <i class="fas fa-cart-plus"></i>
                     Adicionar ao Carrinho
                 </button>
-            </div>
+            </article>
 
-            <div class="produto" data-nome="Dorflex" data-categoria="analgesicos" data-sintomas="dor muscular">
-                <img src="assets/images/produtos/dorflex.png" alt="Dorflex">
-                <h3>Dorflex</h3>
-                <p class="produto-descricao">Para dores musculares e tensão.</p>
-                <p class="produto-preco">R$ 12,99</p>
-                <button class="btn-adicionar" onclick="adicionarAoCarrinho('dorflex', 'Dorflex', 12.99)">
+            <article class="produto" data-categoria="antibioticos" data-nome="Amoxicilina" data-sintomas="infecção,garganta,pneumonia">
+                <img src="assets/imagens/amoxicilina.png" alt="Amoxicilina">
+                <h3>Amoxicilina 500mg</h3>
+                <span class="produto-categoria">Antibiótico</span>
+                <div class="produto-descricao">
+                    Antibiótico de amplo espectro, eficaz contra diversas infecções bacterianas. 
+                    Comum no tratamento de infecções respiratórias, sinusite, otite e infecções urinárias.
+                </div>
+                <div class="produto-detalhes">
+                    <p><strong>Dosagem:</strong> 1 comprimido a cada 8 horas</p>
+                    <p><strong>Contraindicações:</strong> Alergia a penicilinas</p>
+                </div>
+                <p class="receita-aviso"><i class="fas fa-prescription"></i> Necessita Receita Médica</p>
+                <p class="estoque">Em estoque: 30 unidades</p>
+                <p class="preco">R$ 45,90</p>
+                <button class="btn btn-cart" onclick="adicionarAoCarrinho('amoxicilina', 'Amoxicilina 500mg', 45.90)">
                     <i class="fas fa-cart-plus"></i>
                     Adicionar ao Carrinho
                 </button>
-            </div>
+            </article>
 
-            <div class="produto" data-nome="Tylenol" data-categoria="analgesicos" data-sintomas="dor febre">
-                <img src="assets/images/produtos/tylenol.png" alt="Tylenol">
-                <h3>Tylenol 750mg</h3>
-                <p class="produto-descricao">Para dores e febre.</p>
-                <p class="produto-preco">R$ 15,99</p>
-                <button class="btn-adicionar" onclick="adicionarAoCarrinho('tylenol', 'Tylenol 750mg', 15.99)">
+            <article class="produto" data-categoria="protector-gastrico" data-nome="Omeprazol" data-sintomas="azia,gastrite,refluxo,dor estômago">
+                <img src="assets/imagens/omeprazol.png" alt="Omeprazol">
+                <h3>Omeprazol 20mg</h3>
+                <span class="produto-categoria">Protetor Gástrico</span>
+                <div class="produto-descricao">
+                    Indicado para tratamento de úlcera, gastrite e refluxo gastroesofágico. 
+                    Reduz a produção de ácido no estômago, aliviando sintomas de queimação e dor.
+                </div>
+                <div class="produto-detalhes">
+                    <p><strong>Dosagem:</strong> 1 cápsula antes do café da manhã</p>
+                    <p><strong>Contraindicações:</strong> Gravidez e amamentação</p>
+                </div>
+                <p class="estoque">Em estoque: 75 unidades</p>
+                <p class="preco">R$ 15,90</p>
+                <button class="btn btn-cart" onclick="adicionarAoCarrinho('omeprazol', 'Omeprazol 20mg', 15.90)">
                     <i class="fas fa-cart-plus"></i>
                     Adicionar ao Carrinho
                 </button>
-            </div>
-        </section>
+            </article>
+
     </main>
 
     <!-- Mini Carrinho -->

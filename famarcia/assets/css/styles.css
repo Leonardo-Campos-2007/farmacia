@@ -915,4 +915,34 @@ nav {
   }
 }
 
+/* ===== BOTÃO DE ADICIONAR (modelo da imagem) ===== */
+.btn-adicionar {
+  background: linear-gradient(90deg, #007bff, #28a745); /* Azul → Verde */
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+  max-width: 220px;
+  margin: 0 auto;
+}
+
+.btn-adicionar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+.btn-adicionar i {
+  font-size: 1rem;
+}
+
+
 
