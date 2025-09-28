@@ -244,7 +244,7 @@
 
         <main>
 
- <section id="medicamentos" class="produtos">
+        <section id="medicamentos" class="produtos">
             <article class="produto" data-categoria="analgesicos" data-nome="Dipirona" data-sintomas="dor,febre,dor de cabeça,enxaqueca">
                 <div class="produto-imagem-container">
                     <img src="assets/imagens/dipirona.png" alt="Dipirona">
@@ -308,7 +308,108 @@
                 </button>
             </article>
 
-             <article class="produto" data-categoria="vitaminas" data-nome="Complexo B" data-sintomas="energia,disposição,sistema nervoso">
+            <article class="produto" data-categoria="analgesicos" data-nome="Paracetamol" data-sintomas="dor,febre,dor de cabeça,gripe">
+                <div class="produto-imagem-container">
+                    <img src="assets/imagens/paracetamol.png" alt="Paracetamol">
+                </div>
+                <h3>Paracetamol 750mg</h3>
+                <span class="produto-categoria">Analgésico e Antitérmico</span>
+                <div class="produto-descricao">
+                    Medicamento para alívio da dor e redução da febre. Efetivo para dores de cabeça, 
+                    dores musculares e estados gripais. Mais suave para o estômago que outros analgésicos.
+                </div>
+                <div class="produto-detalhes">
+                    <p><strong>Dosagem:</strong> 1 comprimido a cada 6 horas</p>
+                    <p><strong>Contraindicações:</strong> Doença hepática grave</p>
+                </div>
+                <p class="estoque">Em estoque: 100 unidades</p>
+                <p class="preco">R$ 8,90</p>
+                <button class="btn btn-cart" onclick="adicionarAoCarrinho('paracetamol', 'Paracetamol 750mg', 8.90)">
+                    <i class="fas fa-cart-plus"></i>
+                    Adicionar ao Carrinho
+                </button>
+            </article>
+
+            <article class="produto" data-categoria="antialergicos" data-nome="Loratadina" data-sintomas="alergia,coriza,espirro,coceira">
+                <div class="produto-imagem-container">
+                    <img src="assets/imagens/loratadina.png" alt="Loratadina">
+                </div>
+                <h3>Loratadina 10mg</h3>
+                <span class="produto-categoria">Antialérgico</span>
+                <div class="produto-descricao">
+                    Antialérgico que alivia sintomas como espirros, coceira, coriza e congestionamento nasal. 
+                    Não causa sonolência como outros antialérgicos tradicionais.
+                </div>
+                <div class="produto-detalhes">
+                    <p><strong>Dosagem:</strong> 1 comprimido ao dia</p>
+                    <p><strong>Contraindicações:</strong> Doença hepática grave</p>
+                </div>
+                <p class="estoque">Em estoque: 45 unidades</p>
+                <p class="preco">R$ 12,50</p>
+                <button class="btn btn-cart" onclick="adicionarAoCarrinho('loratadina', 'Loratadina 10mg', 12.50)">
+                    <i class="fas fa-cart-plus"></i>
+                    Adicionar ao Carrinho
+                </button>
+            </article>
+
+            <article class="produto" data-categoria="anti-inflamatorios" data-nome="Ibuprofeno" data-sintomas="dor,inflamação,febre,dor muscular">
+                <div class="produto-imagem-container">
+                    <img src="assets/imagens/ibuprofeno.png" alt="ibuprofeno">
+                </div>
+                <h3>Ibuprofeno 600mg</h3>
+                <span class="produto-categoria">Anti-inflamatório</span>
+                <div class="produto-descricao">
+                    Anti-inflamatório não esteroidal eficaz no tratamento de dores e inflamações. 
+                    Indicado para dores musculares, articulares e menstruais.
+                </div>
+                <div class="produto-detalhes">
+                    <p><strong>Dosagem:</strong> 1 comprimido a cada 8 horas</p>
+                    <p><strong>Contraindicações:</strong> Úlcera gástrica, problemas cardíacos</p>
+                </div>
+                <p class="estoque">Em estoque: 60 unidades</p>
+                <p class="preco">R$ 18,90</p>
+                <button class="btn btn-cart" onclick="adicionarAoCarrinho('ibuprofeno', 'Ibuprofeno 600mg', 18.90)">
+                    <i class="fas fa-cart-plus"></i>
+                    Adicionar ao Carrinho
+                </button>
+            </article>
+
+            <article class="produto" data-categoria="vitaminas" data-nome="Vitamina C" data-sintomas="imunidade,antioxidante,gripe">
+                <div class="produto-imagem-container">
+                    <img src="assets/imagens/vitaminac.png" alt="Vitamina C">
+                </div>
+                <h3>Vitamina C 1000mg</h3>
+                <span class="produto-categoria">Suplemento Vitamínico</span>
+                <div class="produto-descricao">
+                    Fortalece o sistema imunológico e age como antioxidante. 
+                    Auxilia na absorção de ferro e na formação do colágeno.
+                </div>
+                <div class="produto-detalhes">
+                    <p><strong>Dosagem:</strong> 1 comprimido ao dia</p>
+                    <p><strong>Benefícios:</strong> Imunidade, pele, antioxidante</p>
+                </div>
+                <p class="estoque">Em estoque: 80 unidades</p>
+                <p class="preco">R$ 25,90</p>
+                <button class="btn btn-cart" onclick="adicionarAoCarrinho('vitc', 'Vitamina C 1000mg', 25.90)">
+                    <i class="fas fa-cart-plus"></i>
+                    Adicionar ao Carrinho
+                </button>
+            </article>
+
+            <article class="produto">
+                <img src="assets/imagens/dexametasona.png" alt="Dexametasona">
+                <h3>Dexametasona 4mg</h3>
+                <p>Anti-inflamatório Corticoide</p>
+                <p class="receita-aviso"><i class="fas fa-prescription"></i> Necessita Receita Médica</p>
+                <p class="estoque">Em estoque: 40 unidades</p>
+                <p class="preco">R$ 32,90</p>
+                <button class="btn btn-cart" onclick="adicionarAoCarrinho('dexametasona', 'Dexametasona 4mg', 32.90)">
+                    <i class="fas fa-cart-plus"></i>
+                    Adicionar ao Carrinho
+                </button>
+            </article>
+
+            <article class="produto" data-categoria="vitaminas" data-nome="Complexo B" data-sintomas="energia,disposição,sistema nervoso">
                 <div class="produto-imagem-container">
                     <img src="assets/imagens/complexob.png" alt="Complexo B">
                 </div>
@@ -330,7 +431,50 @@
                 </button>
             </article>
 
-             <article class="produto" data-categoria="controlados" data-nome="Sertralina" data-sintomas="depressão,ansiedade,pânico">
+            <article class="produto" data-categoria="controlados" data-nome="Fluoxetina" data-sintomas="depressão,ansiedade">
+                <img src="assets/imagens/fluoxetina.png" alt="Fluoxetina">
+                <h3>Fluoxetina 20mg</h3>
+                <span class="produto-categoria">Antidepressivo</span>
+                <div class="produto-descricao">
+                    Antidepressivo da classe dos Inibidores Seletivos da Recaptação de Serotonina (ISRS). 
+                    Indicado para tratamento da depressão e transtorno obsessivo-compulsivo.
+                </div>
+                <div class="produto-detalhes">
+                    <p><strong>Dosagem:</strong> 1 cápsula pela manhã</p>
+                    <p><strong>Contraindicações:</strong> Gravidez, amamentação, uso de IMAO</p>
+                </div>
+                <p class="receita-aviso"><i class="fas fa-prescription"></i> Necessita Receita Médica</p>
+                <p class="estoque">Em estoque: 35 unidades</p>
+                <p class="preco">R$ 39,90</p>
+                <button class="btn btn-cart" onclick="adicionarAoCarrinho('fluoxetina', 'Fluoxetina 20mg', 39.90)">
+                    <i class="fas fa-cart-plus"></i>
+                    Adicionar ao Carrinho
+                </button>
+            </article>
+
+            <article class="produto" data-categoria="vitaminas" data-nome="Vitamina D" data-sintomas="imunidade,ossos,disposição">
+                <div class="produto-imagem-container">
+                    <img src="assets/imagens/vitaminad.png" alt="Vitamina D">
+                </div>
+                <h3>Vitamina D 7000UI</h3>
+                <span class="produto-categoria">Suplemento Vitamínico</span>
+                <div class="produto-descricao">
+                    Essencial para absorção de cálcio e saúde dos ossos. Importante para o sistema 
+                    imunológico e humor. Ajuda a prevenir deficiência de vitamina D.
+                </div>
+                <div class="produto-detalhes">
+                    <p><strong>Dosagem:</strong> 1 cápsula por semana</p>
+                    <p><strong>Benefícios:</strong> Ossos, imunidade, disposição</p>
+                </div>
+                <p class="estoque">Em estoque: 90 unidades</p>
+                <p class="preco">R$ 45,90</p>
+                <button class="btn btn-cart" onclick="adicionarAoCarrinho('vitd', 'Vitamina D 7000UI', 45.90)">
+                    <i class="fas fa-cart-plus"></i>
+                    Adicionar ao Carrinho
+                </button>
+            </article>
+
+            <article class="produto" data-categoria="controlados" data-nome="Sertralina" data-sintomas="depressão,ansiedade,pânico">
                 <img src="assets/imagens/sertralina.png" alt="Sertralina">
                 <h3>Sertralina 50mg</h3>
                 <span class="produto-categoria">Antidepressivo</span>
@@ -350,6 +494,7 @@
                     Adicionar ao Carrinho
                 </button>
             </article>
+        </section>
 
     </main>
 
