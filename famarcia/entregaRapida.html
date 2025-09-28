@@ -36,91 +36,71 @@
         </nav>
     </header>
 
-   
-    </style>
-</head>
-<body>
- 
     <main>
         
 
 
-        <!-- == MELHOR PREÇO == -->
-       <div class="container promo-section" style="margin-top:2rem;">
-  <h2 class="promo-title">
-    <i class="fas fa-tags"></i> Produtos em Promoção
-  </h2>
+        <!-- == ENTREGA RÁPIDA == -->
+        <div class="container" style="margin-top:1.5rem;">
+            <h2><i class="fas fa-truck"></i> Rastreamento de Entrega</h2>
+            <p><strong>Código de rastreamento:</strong> BR123456789</p>
 
-  <div class="promo-grid">
-    <!-- Vitamina C -->
-    <div class="promo-card">
-      <div class="promo-image">
-        <img src="./assets/imagens/vitaminaC.jpg"
-             onerror="this.src='https://via.placeholder.com/480x320?text=Vitamina+C';"
-             alt="Vitamina C 1000mg">
-        <span class="discount-badge">-38%</span>
-      </div>
-      <h3>Vitamina C 1000mg</h3>
-      <p class="price">
-        <span class="old-price">R$ 39,90</span>
-        <span class="new-price">R$ 24,90</span>
-      </p>
-      <button class="btn" 
-              onclick="adicionarAoCarrinho('vitc','Vitamina C 1000mg',24.90,'assets/images/produtos/vitamina-c-1000.jpg')">
-        <i class="fas fa-cart-plus"></i> Comprar
-      </button>
+            <div class="status-card" style="background:#fff; padding:1rem; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.06); max-width:800px;">
+                <ul style="list-style:none; padding-left:0;">
+                    <li>📦 <strong>Pedido recebido</strong> - 20/09</li>
+                    <li>🚚 <strong>Em transporte</strong> - 22/09</li>
+                    <li>🏠 <strong>Saiu para entrega</strong> - 25/09</li>
+                    <li>✅ <strong>Entregue</strong> - 26/09</li>
+                </ul>
+
+                <p style="margin-top:1rem; color:#666;">
+                    Se quiser atualizar o código, insira no campo abaixo:
+                </p>
+
+                <form onsubmit="event.preventDefault(); alert('Rastreamento atualizado (simulado)');" style="display:flex; gap:0.5rem;">
+                    <input type="text" placeholder="Insira código de rastreamento" style="flex:1; padding:0.8rem; border-radius:6px; border:1px solid #ddd;">
+                    <button class="btn" type="submit">Atualizar</button>
+                </form>
+            </div>
+        </div>
+
+
+
+    
+        <section id="medicamentos" class="produtos" style="margin-top:2rem;">
+           
+
+    <!-- Modal de Login -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="toggleLogin()">&times;</button>
+            <h2 style="margin-bottom: 1.5rem;">Entrar</h2>
+            <form onsubmit="fazerLogin(event)">
+                <div class="form-group">
+                    <label for="login-email">E-mail:</label>
+                    <input type="email" id="login-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-senha">Senha:</label>
+                    <input type="password" id="login-senha" required>
+                </div>
+                <button type="submit" class="btn" style="width: 100%; margin-top: 1rem;">Entrar</button>
+                <p style="text-align: center; margin-top: 1rem;">
+                    <a href="#" style="color: var(--primary-color);">Esqueceu sua senha?</a>
+                </p>
+                <p style="text-align: center; margin-top: 0.5rem;">
+                    Não tem uma conta? <a href="registro.html" style="color: var(--primary-color);">Cadastre-se</a>
+                </p>
+            </form>
+        </div>
     </div>
 
-    <!-- Álcool em Gel -->
-    <div class="promo-card">
-      <div class="promo-image">
-        <img src="./assets/imagens/alcool em gel.webp"
-             onerror="this.src='https://via.placeholder.com/480x320?text=%C3%81lcool+em+Gel';"
-             alt="Álcool em Gel 500ml">
-        <span class="discount-badge">-50%</span>
-      </div>
-      <h3>Álcool em Gel 500ml</h3>
-      <p class="price">
-        <span class="old-price">R$ 19,90</span>
-        <span class="new-price">R$ 9,90</span>
-      </p>
-      <button class="btn"
-              onclick="adicionarAoCarrinho('alcool500','Álcool em Gel 500ml',9.90,'assets/images/produtos/alcool-gel-500.jpg')">
-        <i class="fas fa-cart-plus"></i> Comprar
-      </button>
-    </div>
-
-    <!-- Máscaras -->
-    <div class="promo-card">
-      <div class="promo-image">
-        <img src="./assets/imagens/caixa de máscaras.jpg"
-             onerror="this.src='https://via.placeholder.com/480x320?text=M%C3%A1scaras+50un';"
-             alt="Máscaras Caixa 50un">
-        <span class="discount-badge">-40%</span>
-      </div>
-      <h3>Caixa de Máscaras 50un</h3>
-      <p class="price">
-        <span class="old-price">R$ 49,90</span>
-        <span class="new-price">R$ 29,90</span>
-      </p>
-      <button class="btn"
-              onclick="adicionarAoCarrinho('mascara50','Máscaras Caixa 50un',29.90,'assets/images/produtos/mascaras-50.jpg')">
-        <i class="fas fa-cart-plus"></i> Comprar
-      </button>
-    </div>
-  </div>
-</div>
-
-
- 
-
-    <!-- Carrinho-->
+    <!-- Carrinho -->
     <div id="mini-carrinho" class="mini-carrinho">
         <div class="mini-carrinho-header">
             <h3>Seu Carrinho</h3>
         </div>
         <div class="mini-carrinho-lista" id="lista-carrinho">
-            <!-- Items do carrinho serão inseridos aqui via JavaScript -->
         </div>
         <div class="mini-carrinho-footer">
             <p id="total-carrinho">Total: R$ 0,00</p>
@@ -128,7 +108,7 @@
         </div>
     </div>
 
-    <!-- Payment modal -->
+    <!-- Payment modal-->
     <div id="payment-modal" class="payment-modal">
       <div class="payment-content">
         <button class="payment-close" onclick="togglePaymentModal()">&times;</button>

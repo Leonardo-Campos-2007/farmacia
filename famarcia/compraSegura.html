@@ -90,6 +90,87 @@
     </p>
   </div>
 </div>
+</main>
+
+  <!-- Modal de Pagamento -->
+
+<div id="payment-modal" class="payment-modal">
+  <div class="payment-content">
+    <button class="payment-close" onclick="togglePaymentModal()">&times;</button>
+    
+    <div class="payment-header">
+      <h2>Checkout</h2>
+      <p>Escolha sua forma de pagamento segura</p>
+    </div>
+
+    <!-- Progress bar -->
+    <div class="payment-progress">
+      <span class="active">Carrinho</span>
+      <span class="active">Pagamento</span>
+      <span>Confirmação</span>
+    </div>
+
+    <!-- Métodos -->
+    <div class="payment-methods">
+      <button class="payment-method" data-method="credit" onclick="selecionarMetodoPagamento('credit')">
+        <i class="fas fa-credit-card"></i>
+        <span>Cartão de Crédito</span>
+      </button>
+      <button class="payment-method" data-method="pix" onclick="selecionarMetodoPagamento('pix')">
+        <i class="fas fa-qrcode"></i>
+        <span>PIX</span>
+      </button>
+      <button class="payment-method" data-method="boleto" onclick="selecionarMetodoPagamento('boleto')">
+        <i class="fas fa-barcode"></i>
+        <span>Boleto Bancário</span>
+      </button>
+    </div>
+
+    <!-- Cartão -->
+    <div id="credit-details" class="payment-details hidden">
+      <form onsubmit="finalizarCompra(event)">
+        <div class="form-group">
+          <label>Número do Cartão</label>
+          <input type="text" placeholder="**** **** **** 1234" maxlength="19" required>
+          <img src="assets/images/visa-master.png" class="card-brands" alt="Visa Mastercard">
+        </div>
+
+        <div class="card-grid">
+          <div class="form-group">
+            <label>Validade</label>
+            <input type="text" placeholder="MM/AA" maxlength="5" required>
+          </div>
+          <div class="form-group">
+            <label>CVV</label>
+            <input type="text" placeholder="123" maxlength="3" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Nome no Cartão</label>
+          <input type="text" placeholder="Como está no cartão" required>
+        </div>
+
+        <button type="submit" class="btn btn-confirm">Confirmar Pagamento</button>
+        <p class="secure-note"><i class="fas fa-lock"></i> Pagamento 100% seguro</p>
+      </form>
+    </div>
+
+    <!-- PIX -->
+    <div id="pix-details" class="payment-details hidden">
+      <p>Escaneie o QR Code para pagar via PIX:</p>
+      <img src="assets/images/qrcode-pix.png" alt="QR Code PIX" class="pix-qrcode">
+      <button class="btn btn-confirm">Já paguei</button>
+    </div>
+
+    <!-- Boleto -->
+    <div id="boleto-details" class="payment-details hidden">
+      <p>Geramos seu boleto. Você pode pagar em qualquer banco ou app:</p>
+      <button class="btn btn-confirm">Gerar Boleto</button>
+    </div>
+  </div>
+</div>      
+
 
 
 
