@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrega Rápida - Farmácia Digital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/produtos.css">
+    <link rel="stylesheet" href="assets/css/carrinho.css">
+    <link rel="stylesheet" href="assets/css/payment.css">
+    <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+    
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-clinic-medical"></i>
+                Farmácia Digital
+            </div>
+            <ul class="menu">
+                <li><a href="index.html#inicio">Início</a></li>
+                <li><a href="index.html#medicamentos">Medicamentos</a></li>
+                <li><a href="index.html#receita">Enviar Receita</a></li>
+                <li><a href="index.html#contato">Contato</a></li>
+                <li id="btn-login"><button onclick="toggleLogin()" class="btn">Entrar</button></li>
+                <li>
+                    <div class="carrinho-icone" onclick="toggleMiniCarrinho()">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="carrinho-quantidade" id="carrinho-quantidade">0</span>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Bem-vindo à Farmácia Digital</h1>
+                <p>Sua farmácia online 24 horas por dia. Encontre medicamentos, vitaminas e produtos de saúde com a comodidade de receber em casa.</p>
+                <div class="hero-buttons">
+                    <a href="medicamentos.html" class="btn btn-large">
+                        <i class="fas fa-pills"></i>
+                        Ver Medicamentos
+                    </a>
+                    <a href="receita.html" class="btn btn-large btn-outline">
+                        <i class="fas fa-prescription"></i>
+                        Enviar Receita
+                    </a>
+
+                    <a href="entregador.html" class="btn btn-large" style="background: #0011ff; color: #fff; border: none; margin-left: 10px;">
+                        <i class="fas fa-motorcycle"></i>
+                        Área do Motoboy
+                    </a>
+                </div>
+            </div>
+
+            <div class="featured-categories">
+                <h2>Categorias em Destaque</h2>
+                <div class="category-grid">
+                    <a href="medicamentos.html?categoria=analgesicos" class="category-card">
+                        <i class="fas fa-tablets"></i>
+                        <h3>Analgésicos</h3>
+                        <p>Alívio para dores</p>
+                    </a>
+                    <a href="medicamentos.html?categoria=antibioticos" class="category-card">
+                        <i class="fas fa-capsules"></i>
+                        <h3>Antibióticos</h3>
+                        <p>Com receita médica</p>
+                    </a>
+                    <a href="medicamentos.html?categoria=vitaminas" class="category-card">
+                        <i class="fas fa-apple-alt"></i>
+                        <h3>Vitaminas</h3>
+                        <p>Suplementação diária</p>
+                    </a>
+                    <a href="medicamentos.html?categoria=controlados" class="category-card">
+                        <i class="fas fa-prescription-bottle-alt"></i>
+                        <h3>Controlados</h3>
+                        <p>Medicamentos especiais</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="services-section">
+                <h2>Nossos Serviços</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <i class="fas fa-truck"></i>
+                        <h3>Entrega Rápida</h3>
+                        <p>Entregamos em toda a cidade</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-headset"></i>
+                        <h3>Atendimento 24h</h3>
+                        <p>Suporte sempre disponível</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Compra Segura</h3>
+                        <p>Pagamento protegido</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-percentage"></i>
+                        <h3>Melhor Preço</h3>
+                        <p>Preços competitivos</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- == ENTREGA RÁPIDA == -->
+        <div class="container" style="margin-top:1.5rem;">
+            <h2><i class="fas fa-truck"></i> Rastreamento de Entrega</h2>
+            <p><strong>Código de rastreamento:</strong> BR123456789</p>
+
+            <div class="status-card" style="background:#fff; padding:1rem; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.06); max-width:800px;">
+                <ul style="list-style:none; padding-left:0;">
+                    <li>📦 <strong>Pedido recebido</strong> - 20/09</li>
+                    <li>🚚 <strong>Em transporte</strong> - 22/09</li>
+                    <li>🏠 <strong>Saiu para entrega</strong> - 25/09</li>
+                    <li>✅ <strong>Entregue</strong> - 26/09</li>
+                </ul>
+
+                <p style="margin-top:1rem; color:#666;">
+                    Se quiser atualizar o código, insira no campo abaixo:
+                </p>
+
+                <form onsubmit="event.preventDefault(); alert('Rastreamento atualizado (simulado)');" style="display:flex; gap:0.5rem;">
+                    <input type="text" placeholder="Insira código de rastreamento" style="flex:1; padding:0.8rem; border-radius:6px; border:1px solid #ddd;">
+                    <button class="btn" type="submit">Atualizar</button>
+                </form>
+            </div>
+        </div>
+
+        
+        <div class="search-container" style="margin-top:2rem;">
+            <div class="search-box">
+                <input type="text" id="pesquisa" placeholder="Busque por nome do medicamento ou sintoma..." onkeyup="pesquisarMedicamentos()">
+                <button class="search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <div class="search-filters">
+                <button class="filter-btn active" data-filter="todos">Todos</button>
+                <button class="filter-btn" data-filter="analgesicos">Analgésicos</button>
+                <button class="filter-btn" data-filter="antibioticos">Antibióticos</button>
+                <button class="filter-btn" data-filter="vitaminas">Vitaminas</button>
+                <button class="filter-btn" data-filter="controlados">Controlados</button>
+            </div>
+        </div>
+
+    
+        <section id="medicamentos" class="produtos" style="margin-top:2rem;">
+            <!-- 3 produtos de exemplo  -->
+            <article class="produto" data-categoria="analgesicos">
+                <div class="produto-imagem-container"><img src="assets/images/produtos/dipirona.png" alt="Dipirona"></div>
+                <h3>Dipirona 500mg</h3>
+                <span class="produto-categoria">Analgésico</span>
+                <p class="preco">R$ 5,99</p>
+                <button class="btn btn-cart" onclick="adicionarAoCarrinho('dipirona', 'Dipirona 500mg', 5.99)">Adicionar ao Carrinho</button>
+            </article>
+
+            <article class="produto" data-categoria="antibioticos">
+                <img src="https://www.drogariaminasbrasil.com.br/media/product/b05/amoxicilina-500mg-com-21-capsulas-prati-donaduzzi-05f.jpg" alt="Amoxicilina">
+                <h3>Amoxicilina 500mg</h3>
+                <span class="produto-categoria">Antibiótico</span>
+                <p class="preco">R$ 45,90</p>
+                <button class="btn btn-cart" onclick="adicionarAoCarrinho('amoxicilina', 'Amoxicilina 500mg', 45.90)">Adicionar ao Carrinho</button>
+            </article>
+
+            <article class="produto" data-categoria="protector-gastrico">
+                <div class="produto-imagem-container"><img src="https://www.drogariaminasbrasil.com.br/media/product/df4/omeprazol-20mg-com-56-capsulas-medley-7a0.jpg" alt="Omeprazol"></div>
+                <h3>Omeprazol 20mg</h3>
+                <span class="produto-categoria">Protetor Gástrico</span>
+                <p class="preco">R$ 15,90</p>
+                <button class="btn btn-cart" onclick="adicionarAoCarrinho('omeprazol', 'Omeprazol 20mg', 15.90)">Adicionar ao Carrinho</button>
+            </article>
+        </section>
+
+        
+        <section id="receita" class="upload-receita" style="margin-top:2.5rem;">
+            <h2>Enviar Receita Médica</h2>
+            <form class="upload-form">
+                <div class="form-group">
+                    <label for="nome">Nome completo:</label>
+                    <input type="text" id="nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="receita">Anexar Receita (PDF ou Imagem):</label>
+                    <input type="file" id="receita" accept=".pdf,.jpg,.jpeg,.png" required>
+                </div>
+                <button type="submit" class="btn">Enviar Receita</button>
+            </form>
+        </section>
+
+        <section id="contato" style="margin-top: 3rem; background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+            <h2 style="color: var(--primary-color); margin-bottom: 1.5rem;">Entre em Contato</h2>
+            <p><strong>Telefone:</strong> (11) 1234-5678</p>
+            <p><strong>WhatsApp:</strong> (11) 98765-4321</p>
+            <p><strong>Email:</strong> contato@farmaciadigital.com</p>
+            <p><strong>Horário de Atendimento:</strong> Segunda a Domingo, 24 horas</p>
+            <p><strong>Endereço:</strong> Av. Principal, 1000 - Centro</p>
+        </section>
+    </main>
+
+    <footer>
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
+            <p>&copy; 2025 Farmácia Digital. Todos os direitos reservados.</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem;">
+                Farmácia Digital - CNPJ: 00.000.000/0001-00<br>
+                Autorização de Funcionamento: 1.23.456-7
+            </p>
+        </div>
+    </footer>
+
+    <!-- Modal de Login -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="toggleLogin()">&times;</button>
+            <h2 style="margin-bottom: 1.5rem;">Entrar</h2>
+            <form onsubmit="fazerLogin(event)">
+                <div class="form-group">
+                    <label for="login-email">E-mail:</label>
+                    <input type="email" id="login-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-senha">Senha:</label>
+                    <input type="password" id="login-senha" required>
+                </div>
+                <button type="submit" class="btn" style="width: 100%; margin-top: 1rem;">Entrar</button>
+                <p style="text-align: center; margin-top: 1rem;">
+                    <a href="#" style="color: var(--primary-color);">Esqueceu sua senha?</a>
+                </p>
+                <p style="text-align: center; margin-top: 0.5rem;">
+                    Não tem uma conta? <a href="registro.html" style="color: var(--primary-color);">Cadastre-se</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Carrinho -->
+    <div id="mini-carrinho" class="mini-carrinho">
+        <div class="mini-carrinho-header">
+            <h3>Seu Carrinho</h3>
+        </div>
+        <div class="mini-carrinho-lista" id="lista-carrinho">
+        </div>
+        <div class="mini-carrinho-footer">
+            <p id="total-carrinho">Total: R$ 0,00</p>
+            <button class="btn" style="width: 100%; margin-top: 1rem;" onclick="togglePaymentModal()">Finalizar Compra</button>
+        </div>
+    </div>
+
+    <!-- Payment modal-->
+    <div id="payment-modal" class="payment-modal">
+      <div class="payment-content">
+        <button class="payment-close" onclick="togglePaymentModal()">&times;</button>
+        <div class="payment-header">
+          <h2>Checkout</h2>
+          <p>Escolha sua forma de pagamento segura</p>
+        </div>
+        <div class="payment-progress">
+          <span class="active">Carrinho</span>
+          <span class="active">Pagamento</span>
+          <span>Confirmação</span>
+        </div>
+        <div class="payment-methods">
+          <button class="payment-method" data-method="credit" onclick="selecionarMetodoPagamento('credit')">
+            <i class="fas fa-credit-card"></i>
+            <span>Cartão de Crédito</span>
+          </button>
+          <button class="payment-method" data-method="pix" onclick="selecionarMetodoPagamento('pix')">
+            <i class="fas fa-qrcode"></i>
+            <span>PIX</span>
+          </button>
+          <button class="payment-method" data-method="boleto" onclick="selecionarMetodoPagamento('boleto')">
+            <i class="fas fa-barcode"></i>
+            <span>Boleto Bancário</span>
+          </button>
+        </div>
+        <div id="credit-details" class="payment-details hidden">
+          <form onsubmit="finalizarCompra(event)">
+            <div class="form-group">
+              <label>Número do Cartão</label>
+              <input type="text" placeholder="**** **** **** 1234" maxlength="19" required>
+              <img src="assets/images/visa-master.png" class="card-brands" alt="Visa Mastercard">
+            </div>
+            <div class="card-grid">
+              <div class="form-group">
+                <label>Validade</label>
+                <input type="text" placeholder="MM/AA" maxlength="5" required>
+              </div>
+              <div class="form-group">
+                <label>CVV</label>
+                <input type="text" placeholder="123" maxlength="3" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Nome no Cartão</label>
+              <input type="text" placeholder="Como está no cartão" required>
+            </div>
+            <button type="submit" class="btn btn-confirm">Confirmar Pagamento</button>
+            <p class="secure-note"><i class="fas fa-lock"></i> Pagamento 100% seguro</p>
+          </form>
+        </div>
+        <div id="pix-details" class="payment-details hidden">
+          <p>Escaneie o QR Code para pagar via PIX:</p>
+          <img src="assets/images/qrcode-pix.png" alt="QR Code PIX" class="pix-qrcode">
+          <button class="btn btn-confirm">Já paguei</button>
+        </div>
+        <div id="boleto-details" class="payment-details hidden">
+          <p>Geramos seu boleto. Você pode pagar em qualquer banco ou app:</p>
+          <button class="btn btn-confirm">Gerar Boleto</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mensagem" class="mensagem"></div>
+</body>
+</html>
