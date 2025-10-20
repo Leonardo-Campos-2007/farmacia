@@ -1,0 +1,60 @@
+<!-- FILE: index.html -->
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login - Farmácia Moderna</title>
+  <link rel="stylesheet" href="/famarcia/assets/css/styles.css">
+</head>
+<body>
+  <main class="container">
+    <div class="login-box">
+      <div class="brand">
+        <img src="logo.png" alt="Logo Farmácia" class="logo">
+        <h1>Bem-vindo</h1>
+        <p>Escolha seu perfil e acesse sua conta</p>
+      </div>
+
+      <div class="role-selector">
+        <input type="radio" name="role" id="cliente" checked>
+        <label for="cliente">Cliente</label>
+
+        <input type="radio" name="role" id="farmaceutico">
+        <label for="farmaceutico">Farmacêutico</label>
+
+        <input type="radio" name="role" id="ceo">
+        <label for="ceo">CEO</label>
+      </div>
+
+      <form class="forms" action="#" method="post">
+        <section class="form-panel" id="cliente-form">
+          <input type="email" placeholder="Email" required>
+          <input type="password" placeholder="Senha" required>
+          <button type="submit">Entrar como Cliente</button>
+        </section>
+
+        <section class="form-panel" id="farmaceutico-form">
+          <input type="text" placeholder="Matrícula ou Email" required>
+          <input type="password" placeholder="Senha" required>
+          <input type="text" placeholder="CRF (opcional)">
+          <button type="submit">Entrar como Farmacêutico</button>
+        </section>
+
+        <section class="form-panel" id="ceo-form">
+          <input type="text" placeholder="Usuário" required>
+          <input type="password" placeholder="Senha" required>
+          <input type="text" placeholder="Chave de Acesso">
+          <button type="submit" class="btn-ceo">Entrar como CEO</button>
+        </section>
+      </form>
+
+      <footer>
+        <p>Esqueceu a senha? <a href="#">Recuperar</a></p>
+      </footer>
+    </div>
+  </main>
+</body>
+</html>
+
+
